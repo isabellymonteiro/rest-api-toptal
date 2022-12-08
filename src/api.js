@@ -1,87 +1,64 @@
-const URL ='http://localhost:3001/tasks'
+const URL = 'http://localhost:3001/tasks'
 
 export const getAllTasks = async () => {
-  try {
     const response = await fetch(URL)
 
-    if (!response.ok) throw new Error()
+    if (!response.ok) throw new Error('Something went wrong getting your tasks, please try again')
 
     const data = await response.json()
     return data
-  } catch(error) {
-    console.log(error) // for now
-    return error
-  }
 }
 
+// not being used
 export const getTaskById = async (taskId) => {
-  try {
-    const response = await fetch(`${URL}/${taskId}`)
+  const response = await fetch(`${URL}/${taskId}`)
 
-    if (!response.ok) throw new Error()
+  if (!response.ok) throw new Error('Something went wrong getting your task, please try again')
 
-    const data = await response.json()
-    return data
-  } catch(error) {
-    console.log(error) // for now
-  }
+  const data = await response.json()
+  return data
 }
 
 export const createTask = async (taskContent) => {
-  try {
-    const response = await fetch(URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        ...taskContent,
-        done: false
-      })
+  const response = await fetch(URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      ...taskContent,
+      done: false
     })
+  })
 
-    if (!response.ok) throw new Error()
-  
-    const data = await response.json()
-    return data
-  } catch(error) {
-    console.log(error) // for now
-    return error
-  }
+  if (!response.ok) throw new Error('Something went wrong creating the task, please try again')
+
+  const data = await response.json()
+  return data
 }
 
 export const updateTask = async (taskId, body)  => {
-  try {
-    const response = await fetch(`${URL}/${taskId}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    })
-    
-    if (!response.ok) throw new Error()
-    
-    const data = await response.json()
-    return data
-  } catch(error) {
-    console.log(error)
-    return error // for now
-  }
+  const response = await fetch(`${URL}/${taskId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  })
+  
+  if (!response.ok) throw new Error('Something went wrong updating the task, please try again')
+  
+  const data = await response.json()
+  return data
 }
 
 export const removeTask = async (taskId) => {
-  try {
-    const response = await fetch(`${URL}/${taskId}`, {
-      method: 'DELETE'
-    })
+  const response = await fetch(`${URL}/${taskId}`, {
+    method: 'DELETE'
+  })
 
-    if (!response.ok) throw new Error()
+  if (!response.ok) throw new Error('Something went wrong deleting the task, please try again')
 
-    const data = await response.json()
-    return data
-  } catch(error) {
-    console.log(error) // for now
-    return error
-  }
+  const data = await response.json()
+  return data
 }
