@@ -13,14 +13,18 @@
 <body>
   <main id="page__container">
     <form id="add-task__form">
-      <label for="add-task__title">Task title</label>
-      <input type="text" id="add-task__title" name="title" >
-      <label for="add-task__description">Task description</label>
-      <input type="text" id="add-task__description" name="description" >
+      <div class="inputContainer">
+        <label for="add-task__title">Task title</label>
+        <input type="text" id="add-task__titleInput" name="title" >
+      </div>
+      <div class="inputContainer">
+        <label for="add-task__description">Task description</label>
+        <input type="text" id="add-task__descriptionInput" name="description" >
+      </div>
       <button id="add-task__button">Add task</button>
     </form>
     <section id="todo-tasks">
-      <h2>Tasks</h2>
+      <h2>To do</h2>
       <ul id="todo-tasks__list"></ul>
     </section>
     <section id="completed-tasks">
@@ -32,16 +36,16 @@
   <template id="task__template">
     <li class="task" data-id="">
       <input type="checkbox" class="task__checkbox">
-      <div>
+      <div class="task__textContent">
         <input type="text" class="task__title" readonly>
         <input type="text" class="task__description" readonly>
       </div>
-      <div>
+      <div class="task__controlButtons">
         <button class="task__edit-button" aria-label="Edit task">
-          <img src="img/edit.svg" class="task__edit-image">
+          <img src="img/edit.svg">
         </button>
         <button class="task__delete-button" aria-label="Delete task">
-          <img src="img/delete.svg" class="task__delete-image">
+          <img src="img/delete.svg">
         </button>
       </div>
     </li>

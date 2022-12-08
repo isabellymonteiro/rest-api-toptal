@@ -35,7 +35,7 @@ export class Task {
       task.classList.add('task--completed')
       completedTaskList.appendChild(this.clone)
     } else {
-      todoTaskList.appendChild(this.clone)
+      todoTaskList.insertBefore(this.clone, todoTaskList.firstElementChild)
     }
   }
 

@@ -1,9 +1,10 @@
 :root {
   --main-font: 'Montserrat', sans-serif;
+  --border-radius: .5rem;
 
-  --dark-pink: #D90D32,
-  --dark-blue: #1E1D40,
-  --blue: #1B65A6,
-  --light-blue: #4AB0D9,
-  --light-grey: #F2E6D8
+  --dark-pink: #D90D32;
+  --dark-blue: #1E1D40;
+  --blue: #1B65A6;
+  --light-blue: #4AB0D9;
+  --light-grey: #F2E6D8;
 }
