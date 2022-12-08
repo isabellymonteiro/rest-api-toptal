@@ -4,10 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <title>REST API — Task 1</title>
 </head>
 <body>
+  <main id="page__container">
+    <form id="add-task__form">
+      <label for="add-task__title">Task title</label>
+      <input type="text" id="add-task__title" name="title" >
+      <label for="add-task__description">Task description</label>
+      <input type="text" id="add-task__description" name="description" >
+      <button id="add-task__button">Add task</button>
+    </form>
+    <section id="todo-tasks">
+      <h2>Tasks</h2>
+      <ul id="todo-tasks__list"></ul>
+    </section>
+    <section id="completed-tasks">
+      <h2>Completed</h2>
+      <ul id="completed-tasks__list"></ul>
+    </section>
+  </main>
+
+  <template id="task__template">
+    <li class="task">
+      <input type="checkbox" class="task__checkbox">
+      <div>
+        <input type="text" class="task__title" readonly>
+        <input type="text" class="task__description" readonly>
+      </div>
+      <div>
+        <button class="task__edit-button" aria-label="Edit task">
+          <img src="img/edit.svg" class="task__edit-image">
+        </button>
+        <button class="task__delete-button" aria-label="Delete task">
+          <img src="img/delete.svg" class="task__delete-image">
+        </button>
+      </div>
+    </li>
+  </template>
   <script src="dist/bundle.js"></script>
 </body>
 </html>

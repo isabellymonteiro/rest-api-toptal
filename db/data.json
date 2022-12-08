@@ -5,6 +5,18 @@
       "title": "Buy milk",
       "description": "I need it, my cat needs it.",
       "done": false
+    },
+    {
+      "title": "Finish the project logic",
+      "description": "at least that",
+      "done": true,
+      "id": 2
+    },
+    {
+      "title": "Finish the project styling",
+      "description": "sorry",
+      "done": false,
+      "id": 3
     }
   ]
 }
