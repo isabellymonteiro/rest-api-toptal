@@ -13,7 +13,6 @@ getAllTasks().then(tasksData => {
   tasksData.map(taskData => createTaskElement(taskData))
 })
 
-// if task comes with completed on first fetch
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   const formData = new FormData(e.target)
