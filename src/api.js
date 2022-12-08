@@ -52,7 +52,7 @@ export const updateTask = async (taskId, body)  => {
   return data
 }
 
-export const removeTask = async (taskId) => {
+export const deleteTask = async (taskId) => {
   const response = await fetch(`${URL}/${taskId}`, {
     method: 'DELETE'
   })
